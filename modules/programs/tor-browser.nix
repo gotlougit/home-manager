@@ -116,7 +116,7 @@ in {
   meta.maintainers = [ maintainers.rycee maintainers.kira-bruneau ];
 
   imports = [
-    (mkRemovedOptionModule [ "programs" "firefox" "extensions" ] ''
+    (mkRemovedOptionModule [ "programs" "tor-browser" "extensions" ] ''
 
       Extensions are now managed per-profile. That is, change from
 
@@ -125,17 +125,17 @@ in {
       to
 
         programs.firefox.profiles.myprofile.extensions = [ foo bar ];'')
-    (mkRemovedOptionModule [ "programs" "firefox" "enableAdobeFlash" ]
+    (mkRemovedOptionModule [ "programs" "tor-browser" "enableAdobeFlash" ]
       "Support for this option has been removed.")
-    (mkRemovedOptionModule [ "programs" "firefox" "enableGoogleTalk" ]
+    (mkRemovedOptionModule [ "programs" "tor-browser" "enableGoogleTalk" ]
       "Support for this option has been removed.")
-    (mkRemovedOptionModule [ "programs" "firefox" "enableIcedTea" ]
+    (mkRemovedOptionModule [ "programs" "tor-browser" "enableIcedTea" ]
       "Support for this option has been removed.")
   ];
 
   options = {
     programs.tor-browser = {
-      enable = mkEnableOption "Firefox";
+      enable = mkEnableOption "tor-browser";
 
       package = mkOption {
         type = with types; nullOr package;
